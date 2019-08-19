@@ -1,3 +1,9 @@
 ﻿h1 {
     color: red;
 }
+
+.monkey {
+    background-image: url(../images/monkey.png);
+    height:400px;
+    width:600px;
+}
