@@ -11,9 +11,17 @@ module.exports = {
         'main': './wwwroot/source/app.js'
     },
     output: {
+        
         path: path.resolve(__dirname, 'wwwroot/dist'),
+        
         filename: 'bundle.js',
-        publicPath: 'dist/'
+
+        // Use publicPath, starting with /, i.e. /dist/ instead of dist/.
+        // Otherwise, paths to your assets will be interpreted as relative and if one sass document, 
+        // say, dist/daddy.scss imports another one from e.g. dist/child.scss, 
+        // the path to child will be interpreted as relative to daddy's url "folder", 
+        // which is dist, so browser will look for dist/dist/child.scss.
+        publicPath: '/dist/'
     },
     plugins: [
         extractCSS,
@@ -28,7 +36,7 @@ module.exports = {
     module: {
         rules: [{
                 test: /\.css$/,
-                use: extractCSS.extract(['css-loader?minimize'])
+                use: extractCSS.extract(['css-loader?minimize']),
             },
             {
                 test: /\.js?$/,
@@ -44,7 +52,7 @@ module.exports = {
                 use: [{
                     loader: 'url-loader',
                     options: {
-                        limit: 10000, 
+                        limit: 4000,
                         name: 'images/[hash]-[name].[ext]'
                     }
                 }]
