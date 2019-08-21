@@ -1,9 +1,16 @@
 ﻿h1 {
-    color: red;
+    color: #444;
 }
 
 .monkey {
     background-image: url(../images/monkey.png);
-    height:400px;
-    width:600px;
+    height: 100px;
+    width: 300px;
 }
+
+.light {
+    background: url(../images/light.svg) 20% 20% no-repeat;
+    background-size: contain;
+    height: 10vh;
+}
+
