@@ -14,3 +14,16 @@
     height: 10vh;
 }
 
+@font-face {
+    font-family: 'MyWebFont';
+    src: 
+        url('../fonts/sb-fonts.woff2') format('woff2'), 
+        url('../fonts/sb-fonts.woff') format('woff'),
+        url('../fonts/sb-fonts.eot') format('embedded-opentype'),
+        url('../fonts/sb-fonts.ttf')  format('truetype'),
+        url('../fonts/sb-fonts.svg') format('svg'); 
+}
+
+.alphabet {
+    font-family: 'MyWebFont';
+}

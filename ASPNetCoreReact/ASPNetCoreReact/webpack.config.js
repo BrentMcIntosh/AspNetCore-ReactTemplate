@@ -11,9 +11,9 @@ module.exports = {
         'main': './wwwroot/source/app.js'
     },
     output: {
-        
+
         path: path.resolve(__dirname, 'wwwroot/dist'),
-        
+
         filename: 'bundle.js',
 
         // Use publicPath, starting with /, i.e. /dist/ instead of dist/.
@@ -60,7 +60,14 @@ module.exports = {
             {
                 test: /\.svg$/,
                 use: 'file-loader'
-            }
+            },
+            {
+                test: /\.(ttf|eot|woff|woff2)$/,
+                loader: 'file-loader',
+                options: {
+                    name: 'fonts/[name].[ext]',
+                },
+            },
         ]
     }
 };
