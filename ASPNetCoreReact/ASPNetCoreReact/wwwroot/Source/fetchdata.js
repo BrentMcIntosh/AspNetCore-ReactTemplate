@@ -18,9 +18,7 @@ export default class FetchData extends React.Component {
             : FetchData.renderForecastsTable(this.state.forecasts);
 
         return <div>
-            <h1>Weather forecast</h1>
-            <button onClick={() => { this.refreshData() }}>Refresh</button>
-            <p>This component demonstrates fetching data from the server.</p>
+            <button className='btn btn-primary padalicious' onClick={() => { this.refreshData() }}>Refresh</button>
             {contents}
         </div>;
     }

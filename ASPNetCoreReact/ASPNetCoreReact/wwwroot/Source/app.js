@@ -15,9 +15,17 @@ import Counter from './reactcomponent';
 
 import FetchData from './fetchdata';
 
-import ES6Lib from './es6codelib';
+// import ES6Lib from './es6codelib';
 
 import cartmanIcon from '../images/cartman.png';
+
+import 'font-awesome/css/font-awesome.css';
+
+var fontAwsomeTest = document.getElementById('fontAwesomeTest');
+
+fontAwsomeTest.innerHTML = 'This is a great font!';
+
+fontAwsomeTest.className = 'fa fa-hand-spock-o fa-1g';
 
 var cartmanImg = document.getElementById('cartman');
 

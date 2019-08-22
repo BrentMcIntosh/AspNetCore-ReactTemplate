@@ -1,5 +1,7 @@
-﻿import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+﻿
+import * as React from 'react';
+
+// import * as ReactDOM from 'react-dom';
 
 export default class Counter extends React.Component {
     constructor() {
@@ -8,15 +10,7 @@ export default class Counter extends React.Component {
     }
 
     render() {
-        return <div>
-            <h1>Counter</h1>
-
-            <p>This is a simple example of a React component.</p>
-
-            <p>Current count: <strong>{this.state.currentCount}</strong></p>
-
-            <button onClick={() => { this.incrementCounter() }}>Increment</button>
-        </div>;
+        return <div><button className='btn btn-secondary padalicious' onClick={() => { this.incrementCounter() }}>Click Number {this.state.currentCount}</button></div>;
     }
 
     incrementCounter() {
