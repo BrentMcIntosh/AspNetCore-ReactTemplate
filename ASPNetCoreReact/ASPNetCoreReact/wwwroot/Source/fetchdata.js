@@ -1,16 +1,25 @@
-﻿import * as React from 'react';
+﻿
+import * as React from 'react';
+
 import 'es6-promise';
+
 import 'isomorphic-fetch';
 
 export default class FetchData extends React.Component {
+
     constructor() {
+
         super();
+
         this.state = { forecasts: [], loading: true };
-        fetch('api/SampleData/WeatherForecasts')
-            .then(response => response.json())
-            .then(data => {
-                this.setState({ forecasts: data, loading: false });
-            });
+
+        this.refreshData();
+
+        //fetch('api/SampleData/WeatherForecasts')
+        //    .then(response => response.json())
+        //    .then(data => {
+        //        this.setState({ forecasts: data, loading: false });
+        //    });
     }
 
     render() {
@@ -24,11 +33,32 @@ export default class FetchData extends React.Component {
     }
 
     refreshData() {
-        fetch('api/SampleData/WeatherForecasts')
+
+        console.log("refreshData()");
+
+           fetch('api/SampleData/WeatherForecasts')
             .then(response => response.json())
             .then(data => {
                 this.setState({ forecasts: data, loading: false });
             });
+
+        //fetch('api/SampleData/WeatherForecasts')
+        //    .then(response => { 
+            
+        //        //console.log("refreshData() first then");
+                
+        //        //console.log(response);
+                
+        //        response.json(); 
+        //    })
+        //    .then(data => {
+
+        //        //console.log("refreshData() second then");
+                
+        //        //console.log(data);
+
+        //        this.setState({ forecasts: data, loading: false });
+        //    });
     }
 
     static renderForecastsTable(forecasts) {
