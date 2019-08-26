@@ -24,6 +24,10 @@ module.exports = {
         // which is dist, so browser will look for dist/dist/child.scss.
         publicPath: '/dist/'
     },
+
+    // add this for the source map
+    devtool: 'source-map',
+
     plugins: [
         extractCSS,
         new webpack.ProvidePlugin({
@@ -32,7 +36,9 @@ module.exports = {
             'window.jQuery': 'jquery',
             Popper: ['popper.js', 'default']
         }),
-        new webpack.optimize.UglifyJsPlugin()
+
+        // started seeing source maps after commenting this out
+        // new webpack.optimize.UglifyJsPlugin()
     ],
     module: {
         rules: [{
