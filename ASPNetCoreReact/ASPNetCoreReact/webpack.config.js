@@ -8,14 +8,19 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractCSS = new ExtractTextPlugin('allstyles.css');
 
 module.exports = {
+    
     entry: {
-        'main': './wwwroot/source/app.js'
+
+        'main': './wwwroot/source/app.js',
+
+        vendor: ['react']
+
     },
     output: {
 
         path: path.resolve(__dirname, 'wwwroot/dist'),
 
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
 
         // Use publicPath, starting with /, i.e. /dist/ instead of dist/.
         // Otherwise, paths to your assets will be interpreted as relative and if one sass document, 
