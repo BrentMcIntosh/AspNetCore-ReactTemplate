@@ -1,5 +1,4 @@
-﻿
-const path = require('path');
+﻿const path = require('path');
 
 const webpack = require('webpack');
 
@@ -8,7 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractCSS = new ExtractTextPlugin('allstyles.css');
 
 module.exports = {
-    
+
     entry: {
 
         'main': './wwwroot/source/app.js',
@@ -16,6 +15,7 @@ module.exports = {
         vendor: ['react']
 
     },
+
     output: {
 
         path: path.resolve(__dirname, 'wwwroot/dist'),
@@ -39,12 +39,19 @@ module.exports = {
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
-            Popper: ['popper.js', 'default']
+            Popper: ['popper.js', 'default'],
         }),
+
+
+        // see optimization for the newer better way
+        //new webpack.optmize.CommonsChunkPlugin({
+        //    name: 'vendor',
+        //}),
 
         // started seeing source maps after commenting this out
         // new webpack.optimize.UglifyJsPlugin()
     ],
+
     module: {
         rules: [{
                 test: /\.css$/,
